@@ -94,4 +94,13 @@ function guardar(textM, archiveName){
 		name: archiveName
 	}
 	console.log(data)
+	const request = {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(data),
+	}
+	fetch(url, request) //no debe retornar nada
+
 }

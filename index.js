@@ -46,3 +46,9 @@ app.get('/ver', (request, response) => {
     text: htmlText
   }))
 });
+
+//@jackMerma
+//guardar y escribir en un archivo con writefile
+app.post('/save', (request, response) => {
+  console.log(request.body);
+})
