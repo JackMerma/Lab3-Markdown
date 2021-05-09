@@ -66,6 +66,8 @@ function crear(){
 	//tomare al div del cuerpo -> bodyContent
 	let html = "<div id='formBox'>" 
 	+ "<form id='form'>"
+	+ "<label for='archiveName'>Archivo: </label>"
+	+ "<input type='text' id='archiveName'><br>"
 	+ "<textarea id='text'></textarea><br>"
 	+ "<input type='submit' value='guardar'><a href='http://localhost:3000/'>Cancelar</a>" //al cancelar muestra el inicio
 	+ "</form>"
