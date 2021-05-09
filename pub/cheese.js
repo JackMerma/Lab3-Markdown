@@ -83,5 +83,15 @@ function enviarData(){ //no se tiene que hacer un listener event para cuando se 
 	document.querySelector('#form').onsubmit = () => {
 		console.log(text.value)
 		console.log(name.value)
+		guardar(text.value, name.value)
+		return false;
 	}
+}
+function guardar(textM, archiveName){
+	const url = 'http://localhost:3000/save'
+	const data = { //envio al objeto con text y data
+		text: textM,
+		name: archiveName
+	}
+	console.log(data)
 }
