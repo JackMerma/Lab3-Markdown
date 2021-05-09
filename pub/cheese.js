@@ -74,4 +74,14 @@ function crear(){
 	+ "</div>";
 	console.log(html);
 	document.querySelector('#bodyContent').innerHTML = html;
+	enviarData();
+}
+//extraer data del formulario una vez enviada
+function enviarData(){ //no se tiene que hacer un listener event para cuando se cargue la pagina
+	const text = document.querySelector('#text')
+	const name = document.querySelector('#archiveName')
+	document.querySelector('#form').onsubmit = () => {
+		console.log(text.value)
+		console.log(name.value)
+	}
 }
