@@ -48,7 +48,7 @@ function renderList(data) {//Anexa al HTML LA LISTA ES LLAMADA POR LA FUNCION DE
 	}
 	document.getElementById("lista").innerHTML = html;
 }
-
+/*
 //ESTO EN TEORIA NO FUNCIONARIA PARA LA FUNCION VER
 document.addEventListener('DOMContentLoaded', function () {
 	const text = document.getElementById('markupText');
@@ -57,3 +57,19 @@ document.addEventListener('DOMContentLoaded', function () {
 		return false;
 	}
 })
+*/
+
+//@jackMerma
+//funcion crear() -> mostrar formulario y opciones
+function crear(){
+	console.log("funcion crear");
+	//tomare al div del cuerpo -> bodyContent
+	let html = "<div id='formBox'>" 
+	+ "<form id='form'>"
+	+ "<textarea id='text'></textarea><br>"
+	+ "<input type='submit' value='guardar'><a href='http://localhost:3000/'>Cancelar</a>" //al cancelar muestra el inicio
+	+ "</form>"
+	+ "</div>";
+	console.log(html);
+	document.querySelector('#bodyContent').innerHTML = html;
+}
