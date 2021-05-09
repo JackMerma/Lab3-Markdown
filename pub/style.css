@@ -1,6 +1,8 @@
 #presentacion {  
-  background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwallhere.com%2Fes%2Fwallpaper%2F1407707&psig=AOvVaw2vkIdpzF1VHtgOrkqMDhlf&ust=1620620075987000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNjwnrbeu_ACFQAAAAAdAAAAABAP"); 
+  background-image: url("https://us.123rf.com/450wm/detshana/detshana1707/detshana170700346/82693400-fondo-negro.jpg"); 
+  padding: 35px;
 }
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -30,10 +32,45 @@ li a:hover:not(.active) {
 }
 
 h1 {
-  color: white;
+  color: red;
 }
 
 body {
-  background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.lowes.com%2Fpd%2FSilestone-Blanco-Maple-Quartz-Kitchen-Countertop-Sample%2F1003081634&psig=AOvVaw2aUr4fluX-0HKk_bmcqHp1&ust=1620620818348000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPC0qb3hu_ACFQAAAAAdAAAAABAJ");
+  background-image: url("https://images.vexels.com/media/users/3/76625/preview2/0a9ec07890cae65e32fad41107cb648b-fondo-blanco-transparente.jpg");
 }
 
+#mov {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  position:relative;
+  animation-name: anima;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes anima {
+  0%   {background-color:red; left:500px; top:0px;}
+  50%  {background-color:red; left:800px; top:px;}
+  100% {background-color:red; left:500px; top:0px;}
+}
+
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: calc(100% - 4rem);
+}
+
+.footer {
+  height: 4rem;
+  background-color: #e2e2e2
+}
