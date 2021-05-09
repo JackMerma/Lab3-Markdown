@@ -1,5 +1,5 @@
 #presentacion {  
-  background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwallhere.com%2Fes%2Fwallpaper%2F1407707&psig=AOvVaw2vkIdpzF1VHtgOrkqMDhlf&ust=1620620075987000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNjwnrbeu_ACFQAAAAAdAAAAABAP); 
+  background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwallhere.com%2Fes%2Fwallpaper%2F1407707&psig=AOvVaw2vkIdpzF1VHtgOrkqMDhlf&ust=1620620075987000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNjwnrbeu_ACFQAAAAAdAAAAABAP"); 
 }
 ul {
   list-style-type: none;
@@ -28,6 +28,12 @@ li a:hover:not(.active) {
 .active {
   background-color: #4CAF50;
 }
+
 h1 {
   color: white;
 }
+
+body {
+  background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.lowes.com%2Fpd%2FSilestone-Blanco-Maple-Quartz-Kitchen-Countertop-Sample%2F1003081634&psig=AOvVaw2aUr4fluX-0HKk_bmcqHp1&ust=1620620818348000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPC0qb3hu_ACFQAAAAAdAAAAABAJ");
+}
+
