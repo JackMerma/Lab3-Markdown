@@ -102,5 +102,7 @@ function guardar(textM, archiveName){
 		body: JSON.stringify(data),
 	}
 	fetch(url, request) //no debe retornar nada
+	//listar de nuevo archivos
+	//listar();
 
 }
