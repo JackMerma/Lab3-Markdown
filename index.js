@@ -51,4 +51,13 @@ app.get('/ver', (request, response) => {
 //guardar y escribir en un archivo con writefile
 app.post('/save', (request, response) => {
   console.log(request.body);
+
+  let text = request.body.text;
+  let archiveName = request.body.name;
+  console.log(text);
+  console.log(archiveName);
+  let ruta = "dat/" + archiveName;
+  
+  //guardar archivo con nombre y contenido
+  fs.writeFileSync(ruta, text);
 })
