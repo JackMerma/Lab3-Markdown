@@ -21,7 +21,7 @@ app.get('/', (request, response) => {
 	response.sendFile(path.resolve(__dirname, 'index.html'));
 });
 
-app.post('/', (request, response) => {
+app.post('/view', (request, response) => {
   var fileName = request.body.text;
   console.log(fileName);
   fs.readFile(path.resolve(__dirname, 'dat/' + fileName), 'utf8',(err, data) => {

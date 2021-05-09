@@ -1,19 +1,19 @@
 
 function ver(fileName) {//PRIMERO BUSCO EL ARCHIVO
-	const url = 'http://localhost:3000/';
+	const url = 'http://localhost:3000/view';
 	console.log(fileName);
 	const data = {
 		text: fileName
 	}
 	console.log(data);
   const request = {
-		method: 'POST', // Podría ser GET
+		method: 'POST', // Podría ser GET sin incorporar un BODY
 		headers: {
 			'Content-Type': 'application/json',
 		},
 		body: JSON.stringify(data),
 	}
-	fetch(url, request).then(
+	fetch(url, request).then(//RECIBO EL OBJETO INTERPRETADO POR MARKDOWN
 		response => response.json()
 	).then(
 		data => {
