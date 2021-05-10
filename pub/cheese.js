@@ -73,7 +73,7 @@ function crear(){
 	+ "</form>"
 	+ "</div>";
 	console.log(html);
-	document.querySelector('#bodyContent').innerHTML = html;
+	document.querySelector('#contenido').innerHTML = html;
 	enviarData();
 }
 //extraer data del formulario una vez enviada
