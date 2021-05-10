@@ -57,7 +57,7 @@ function crear(){
 	//tomare al div del cuerpo -> bodyContent
 	let html = "<div id='formBox'>" 
 	+ "<form id='form'>"
-	+ "<div id='archiveName'><label for='archiveName'>Archivo: </label>"
+	+ "<div><label for='archiveName'>Archivo: </label>"
 	+ "<input type='text' id='archiveName' placeholder='File...' required></div><br>"
 	+ "<div id='text'><textarea id='textMarkdown' cols='50' rows='10'></textarea></div><br>"
 	+ "<div id='buttons'><input class='linkC' type='submit' value='guardar'><a id='linkButton' class='linkC' href='http://localhost:3000/'>cancelar</a>" //al cancelar muestra el inicio
@@ -69,7 +69,7 @@ function crear(){
 }
 //extraer data del formulario una vez enviada
 function enviarData(){ //no se tiene que hacer un listener event para cuando se cargue la pagina
-	const text = document.querySelector('#text')
+	const text = document.querySelector('#textMarkdown')
 	const name = document.querySelector('#archiveName')
 	document.querySelector('#form').onsubmit = () => {
 		console.log(text.value)
