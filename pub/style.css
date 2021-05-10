@@ -3,6 +3,10 @@
   padding: 35px;
 }
 
+#contenido {
+  padding: 25px;
+}
+
 ul.nav {
   list-style-type: none;
   margin: 0;
@@ -32,8 +36,17 @@ li a:hover:not(.active) {
   background-color: #4CAF50;
 }
 
-h1 {
+li.footer b {
   color: red;
+}
+
+p {
+  color: black;
+  padding: 15px;
+}
+
+li {
+  color: black;
 }
 
 body {
@@ -41,8 +54,8 @@ body {
 }
 
 #mov {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background-color: red;
   position:relative;
   animation-name: anima;
