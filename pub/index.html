@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="style.css" rel="stylesheet" type="text/css">
+  <script src="cheese.js"></script>
   <title>Document</title>
 </head>
 <body>
@@ -13,10 +14,10 @@
     <h1>Inicio</h1>
   </div>
   
-  <ul>
-    <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#crear">Crear</a></li>
-    <li><a href="#explorar">Explorar</a></li>
+  <ul class="nav">
+    <li class="nav"><a href="http://localhost:3000/">Inicio</a></li>
+    <li class="nav"><a onclick="crear()">Crear</a></li>
+    <li class="nav"><a onclick="explorar()">Explorar</a></li>
   </ul>
 
   <div id="contenido">

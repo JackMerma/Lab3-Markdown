@@ -1,31 +1,31 @@
-function ver(markupText) {
-  //TENER EN CUENTA QUE LUEGO DE VER TAMBIEN HAY QUE REGRESAR AL LISTADO
-  //TIENE QUE MODIFICARSE DE TAL MANERA QUE AL HACER CLICK EN EL ARCHIVO SE MUESTRE
-  
-  const url = 'http://localhost:3000/ver'
+function ver(fileName) {//PRIMERO BUSCO EL ARCHIVO
+	const url = 'http://localhost:3000/view';
+	console.log(fileName);
 	const data = {
-		text: markupText
+		text: fileName
 	}
-  console.log(data);
+	console.log(data);
   const request = {
-		method: 'POST', // Podría ser GET
+		method: 'POST', // Podría ser GET sin incorporar un BODY
 		headers: {
 			'Content-Type': 'application/json',
 		},
 		body: JSON.stringify(data),
 	}
-	http = fetch(url, request)
-	http.then(
+	fetch(url, request).then(//RECIBO EL OBJETO INTERPRETADO POR MARKDOWN
 		response => response.json()
 	).then(
 		data => {
-			document.getElementById('htmlText').innerHTML = data.text;
+			var texto = data.text;
+			console.log(texto);
+			var button = "<br><button onclick='explorar()'>Regresar</button>";
+			texto = texto + button;
+			document.getElementById('contenido').innerHTML = texto;;
 		}
 	)
 }
 
-
-function listar() {
+function explorar() {
 	const url = 'http://localhost:3000/explorar';
   fetch(url).then(
     response => response.json()
@@ -39,25 +39,16 @@ function renderList(data) {//Anexa al HTML LA LISTA ES LLAMADA POR LA FUNCION DE
 	var html = "<ul>\n";
 	for (let i = 0; i < data.length; i++) {
 		console.log(data[i]);
-		html = html + "<li>"+data[i]+"</li>\n";
+		var funcion = "ver(\"" + data[i] + "\")";
+		html = html + "<li>" + "<a onclick='" + funcion + "')>" + data[i] + "</a></li>\n";
 	}
 	if(data.length == 0){
 		html= "<p>Aún no hay archivos</p>";
 	}else{
 		html = html + "</ul>\n";
 	}
-	document.getElementById("lista").innerHTML = html;
+	document.getElementById("contenido").innerHTML = html;
 }
-/*
-//ESTO EN TEORIA NO FUNCIONARIA PARA LA FUNCION VER
-document.addEventListener('DOMContentLoaded', function () {
-	const text = document.getElementById('markupText');
-	document.querySelector('#markupForm').onsubmit = () => {
-		recitar(text.value)
-		return false;
-	}
-})
-*/
 
 //@jackMerma
 //funcion crear() -> mostrar formulario y opciones
@@ -103,6 +94,6 @@ function guardar(textM, archiveName){
 	}
 	fetch(url, request) //no debe retornar nada
 	//listar de nuevo archivos
-	//listar();
+	explorar();
 
 }

@@ -21,8 +21,29 @@ app.get('/', (request, response) => {
 	response.sendFile(path.resolve(__dirname, 'index.html'));
 });
 
+app.post('/view', (request, response) => {
+  var fileName = request.body.text;
+  console.log(fileName);
+  fs.readFile(path.resolve(__dirname, 'dat/' + fileName), 'utf8',(err, data) => {
+    if(err){
+      console.log(err);
+      response.status(500).json({
+        error: 'message'
+      })
+      return
+    }
+    let markDownText = data;
+    console.log(markDownText);
+    let htmlText = md.render(markDownText);
+    response.setHeader('Content-Type', 'application/json');
+    response.end(JSON.stringify({
+      text: htmlText
+    }))
+  })
+})
+
 app.get('/explorar', (request, response) => {
-  fs.readdir(path.resolve(__dirname,'pub/'), (error, files) => {
+  fs.readdir(path.resolve(__dirname,'dat/'), (error, files) => {
     if (error) {
       console.error(error)
       response.status(500).json({
@@ -34,19 +55,6 @@ app.get('/explorar', (request, response) => {
     response.json(files);
   });
 });
- 
-    
-app.get('/ver', (request, response) => {
-  console.log(request.body);
-  let markDownText = request.body.text;
-  console.log(markDownText);
-  let htmlText = md.render(markDownText);
-  response.setHeader('Content-Type', 'application/json');
-  response.end(JSON.stringify({
-    text: htmlText
-  }))
-});
-
 //@jackMerma
 //guardar y escribir en un archivo con writefile
 app.post('/save', (request, response) => {
