@@ -21,7 +21,7 @@ function ver(fileName) {//PRIMERO BUSCO EL ARCHIVO
 			console.log(texto);
 			var button = "<br><button onclick='listar()'>Regresar</button>";
 			texto = texto + button;
-			document.getElementById('main').innerHTML = texto;;
+			document.getElementById('contenido').innerHTML = texto;;
 		}
 	)
 }
@@ -48,7 +48,7 @@ function renderList(data) {//Anexa al HTML LA LISTA ES LLAMADA POR LA FUNCION DE
 	}else{
 		html = html + "</ul>\n";
 	}
-	document.getElementById("main").innerHTML = html;
+	document.getElementById("contenido").innerHTML = html;
 }
 
 //ESTO EN TEORIA NO FUNCIONARIA PARA LA FUNCION VER
