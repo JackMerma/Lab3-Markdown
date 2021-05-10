@@ -40,7 +40,7 @@ function renderList(data) {//Anexa al HTML LA LISTA ES LLAMADA POR LA FUNCION DE
 	for (let i = 0; i < data.length; i++) {
 		console.log(data[i]);
 		var funcion = "ver(\"" + data[i] + "\")";
-		html = html + "<li>" + "<a onclick='" + funcion + "')>" + data[i] + "</a></li>\n";
+		html = html + "<li id='liFile'>" + "<a id='linkFile' onclick='" + funcion + "')>" + data[i] + "</a></li>\n";
 	}
 	if(data.length == 0){
 		html= "<p>Aún no hay archivos</p>";
@@ -57,11 +57,11 @@ function crear(){
 	//tomare al div del cuerpo -> bodyContent
 	let html = "<div id='formBox'>" 
 	+ "<form id='form'>"
-	+ "<label for='archiveName'>Archivo: </label>"
-	+ "<input type='text' id='archiveName'><br>"
-	+ "<textarea id='text'></textarea><br>"
-	+ "<input type='submit' value='guardar'><a href='http://localhost:3000/'>Cancelar</a>" //al cancelar muestra el inicio
-	+ "</form>"
+	+ "<div id='archiveName'><label for='archiveName'>Archivo: </label>"
+	+ "<input type='text' id='archiveName' placeholder='File...' required></div><br>"
+	+ "<div id='text'><textarea id='textMarkdown' cols='50' rows='10'></textarea></div><br>"
+	+ "<div id='buttons'><input class='linkC' type='submit' value='guardar'><a id='linkButton' class='linkC' href='http://localhost:3000/'>cancelar</a>" //al cancelar muestra el inicio
+	+ "</div></form>"
 	+ "</div>";
 	console.log(html);
 	document.querySelector('#contenido').innerHTML = html;
